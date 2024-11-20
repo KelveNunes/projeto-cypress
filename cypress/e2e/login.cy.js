@@ -19,14 +19,14 @@ describe('Teste de Login no Site', () => {
       cy.get('#password').type('senha_errada');
       cy.get('button[type="submit"]').click();
   
-      // Verifica se a mensagem de erro aparece
+      
       cy.get('#message').should('be.visible').and('contain', 'Credenciais inválidas');
     });
   
     it('Deve validar campos obrigatórios', () => {
       cy.get('button[type="submit"]').click();
   
-      // Verifica se os campos estão marcados como inválidos
+      
       cy.get('#username:invalid').should('exist');
       cy.get('#password:invalid').should('exist');
     });
